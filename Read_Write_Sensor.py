@@ -73,7 +73,7 @@ print('Reading Google Coral Data values, press Ctrl-C to quit...')
 print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
 print('-' * 60)
 
-for i in range(0, 5000):
+for i in range(0, 10000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
@@ -259,17 +259,17 @@ for i in range(0, 5000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3:
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1600
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1500
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.3:
-                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1600
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
+                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1500
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.3:
-                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1600
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2:
+                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1500
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.3:
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1600
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2:
+                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1500
 
             # Gather values for displaying
             values[0] = Sensor_1
