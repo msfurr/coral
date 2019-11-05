@@ -361,9 +361,9 @@ for i in range(0, 5000):
             interpreter.set_tensor(input_details[0]['index'], input_data)
             interpreter.invoke()
 
-            Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))
-            Predictions.append(Current_Class)
-            print(Current_Class)
+            print(interpreter.get_tensor(output_details[0]['index']))   
+            #Predictions.append(Current_Class)
+            #print(Current_Class)
 
                 #Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
                 #FilteredPredictions = classSwitch(Predictions)
