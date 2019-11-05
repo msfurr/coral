@@ -137,6 +137,7 @@ RawData_4 = []
 
 Raw_Data = []
 Predictions = []
+FilteredPredictions = []
 
 timeTracker = []
 
@@ -367,8 +368,8 @@ for i in range(0, 5000):
 
             else:
                 Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
-                Predictions = classSwitch(Predictions)
-                Current_Class = Predictions[-1]
+                FilteredPredictions = classSwitch(Predictions)
+                Current_Class = FilteredPredictions[-1]
                 print('  ', Current_Class)
                 print('  ~~~  ')
 
