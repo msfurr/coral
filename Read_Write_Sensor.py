@@ -260,6 +260,7 @@ for i in range(0, 10000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3:
+                    print('RESCALED')
                     Max_1 = min(RawData_1[-RescaleRange:-1]) + 2200
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.3:
@@ -281,7 +282,7 @@ for i in range(0, 10000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
+            # print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
             # Debugging for real time scaling changes
             # print(Min_1)
@@ -301,7 +302,7 @@ Results.to_excel(writer, sheet_name = 'Sheet1')
 writer.save()
 
 # Pull command for file
-# mdt pull /home/mendel/airad/projects/airad-coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
+# mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
 # mdt pull /home/mendel/airad/projects/airad-coral/SensorData_Nov3.xlsx C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
