@@ -361,17 +361,15 @@ for i in range(0, 5000):
             interpreter.set_tensor(input_details[0]['index'], input_data)
             interpreter.invoke()
 
-            if len(Predictions) < 50:
-                Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))
-                Predictions.append(Current_Class)
-                FilteredPredictions.append(Current_Class)
-                print(Current_Class)
+            Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))
+            Predictions.append(Current_Class)
+            FilteredPredictions.append(Current_Class)
+            print(Current_Class)
 
-            else:
-                Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
-                FilteredPredictions = classSwitch(Predictions)
-                Current_Class = FilteredPredictions[-1]
-                print('  ', Current_Class)
-                print('  ~~~  ')
+                #Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
+                #FilteredPredictions = classSwitch(Predictions)
+                #Current_Class = FilteredPredictions[-1]
+                #print('  ', Current_Class)
+                #print('  ~~~  ')
 
 
