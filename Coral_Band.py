@@ -176,15 +176,15 @@ for i in range(0, 5000):
         Range_4.append(Sensor_4)
 
         if i == 10:
-                Min_1 = min(Range_1) - 1500
-                Min_2 = min(Range_2) - 1500
-                Min_3 = min(Range_3) - 1500
-                Min_4 = min(Range_4) - 1500
+                Min_1 = min(Range_1) - 600
+                Min_2 = min(Range_2) - 600
+                Min_3 = min(Range_3) - 600
+                Min_4 = min(Range_4) - 600
 
-                Max_1 = min(Range_1) + 1800
-                Max_2 = min(Range_2) + 1800
-                Max_3 = min(Range_3) + 1800
-                Max_4 = min(Range_4) + 1800
+                Max_1 = min(Range_1) + 1000
+                Max_2 = min(Range_2) + 1000
+                Max_3 = min(Range_3) + 1000
+                Max_4 = min(Range_4) + 1000
 
     else:
 
@@ -342,17 +342,17 @@ for i in range(0, 5000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3:
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1800
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1000
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.3:
-                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1800
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
+                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1000
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.3:
-                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1800
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2:
+                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1000
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.3:
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1800
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2:
+                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1000
 
             # Pull real time data into input tensor for classification
             data = np.float32([[current_estimate_1, current_estimate_2, current_estimate_3, current_estimate_4, d_current_estimate_1, d_current_estimate_2, d_current_estimate_3, d_current_estimate_4]])
@@ -361,9 +361,9 @@ for i in range(0, 5000):
             interpreter.set_tensor(input_details[0]['index'], input_data)
             interpreter.invoke()
 
-            print(interpreter.get_tensor(output_details[0]['index']))   
-            #Predictions.append(Current_Class)
-            #print(Current_Class)
+            Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
+            Predictions.append(Current_Class)
+            print(Current_Class)
 
                 #Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
                 #FilteredPredictions = classSwitch(Predictions)
