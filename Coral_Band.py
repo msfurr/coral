@@ -22,6 +22,7 @@ Change Log
             NOTE: need to retrain model
     11.3 - Added real time adjusting of scaling range (as peaks trend smaller over time)
     11.4 - Added class switch - still need to test
+    11.4 - Moved to independent repo
 
 """
 
