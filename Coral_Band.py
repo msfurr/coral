@@ -363,7 +363,6 @@ for i in range(0, 5000):
 
             Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))
             Predictions.append(Current_Class)
-            FilteredPredictions.append(Current_Class)
             print(Current_Class)
 
                 #Predictions.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
