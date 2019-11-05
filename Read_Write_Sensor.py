@@ -261,16 +261,16 @@ for i in range(0, 10000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3:
                     print('RESCALED')
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 2200
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1800
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.3:
-                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 2200
+                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1800
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.3:
-                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 2200
+                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1800
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.3:
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 2200
+                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1800
 
             # Gather values for displaying
             values[0] = Sensor_1
