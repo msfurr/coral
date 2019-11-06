@@ -92,10 +92,10 @@ for i in range(0, 20000):
 
         # At the end of data gathering set the min and max of the range
         if i == 10:
-            Min_1 = min(Range_1) - 600
-            Min_2 = min(Range_2) - 600
-            Min_3 = min(Range_3) - 600
-            Min_4 = min(Range_4) - 600
+            Min_1 = min(Range_1) - 800
+            Min_2 = min(Range_2) - 800
+            Min_3 = min(Range_3) - 800
+            Min_4 = min(Range_4) - 800
 
             Max_1 = min(Range_1) + 1200
             Max_2 = min(Range_2) + 1200
