@@ -22,7 +22,7 @@ Change Log
             NOTE: need to retrain model
     11.3 - Added real time adjusting of scaling range (as peaks trend smaller over time)
     11.4 - Added class switch - still need to test
-    11.4 - Moved to independent
+    11.4 - Moved to independent repo
 
 """
 
@@ -93,11 +93,11 @@ def classSwitch(Class):
                 
             elif Class[i] == 2 and Class[i - 1] == 1:
                 switchLog.append(i)
-                decision.append(Class[i - 1])
+                decision.append(1)
                 
             elif Class[i] == 2 and Class[i - 1] == 0:
                 switchLog.append(i)
-                decision.append(Class[i - 1])
+                decision.append(0)
                 
             elif Class[i] == 0 and Class[i - 1] == 2:
                 decision.append(Class[i])
@@ -106,7 +106,7 @@ def classSwitch(Class):
                 decision.append(Class[i])
                 
             elif len(switchLog) > 0:
-                
+            
                 if Class[i] == 2 and Class[i - 1] == 0 and Class[i] != Class[switchLog[-1] - 1]:
                     decision.append(Class[i])
                 

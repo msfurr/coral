@@ -100,7 +100,7 @@ for i in range(0, 20000):
             Max_1 = min(Range_1) + 1000
             Max_2 = min(Range_2) + 1000
             Max_3 = min(Range_3) + 1000
-            Max_4 = min(Range_4) + 1000
+            Max_4 = min(Range_4) + 800
 
     # Begin data collection with scaling
     else:
@@ -269,7 +269,7 @@ for i in range(0, 20000):
                     Max_3 = min(RawData_3[-RescaleRange:-1]) + 1000
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2:
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1000
+                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 800
 
             # Gather values for displaying
             values[0] = Sensor_1
