@@ -94,6 +94,7 @@ def main():
         interpreter.set_tensor(input_details[0]['index'], input_data)
         interpreter.invoke()
         results.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
+        print(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
     
     duration = time.time() - start
     print(duration / len(data[0]))
