@@ -67,74 +67,6 @@ def movingAvg(Class, windowSize):
             
     return filteredClass
 
-def classSwitch(Class):
-    """
-    Class switch function to filter 3 classifiers down to 2 (inhale and exhale)
-
-    Args:
-        Class (list): List of inhale / exhale classes
-
-    Returns:
-        decisionClass (list): Filtered (with moving average) of resulting simplified class
-    """
-    
-    decision = []
-    switchLog = []
-
-    for i in range(0, len(Class)):
-
-        if i >= 1:
-
-            if Class[i] == Class[i - 1] and Class[i] == 1:
-                decision.append(Class[i])
-                
-            elif Class[i] == Class[i - 1] and Class[i] == 0:
-                decision.append(Class[i])
-                
-            elif Class[i] == 2 and Class[i - 1] == 1:
-                switchLog.append(i)
-                decision.append(1)
-                
-            elif Class[i] == 2 and Class[i - 1] == 0:
-                switchLog.append(i)
-                decision.append(0)
-                
-            elif Class[i] == 0 and Class[i - 1] == 2:
-                decision.append(Class[i])
-                
-            elif Class[i] == 1 and Class[i - 1] == 2:
-                decision.append(Class[i])
-                
-            elif len(switchLog) > 0:
-            
-                if Class[i] == 2 and Class[i - 1] == 0 and Class[i] != Class[switchLog[-1] - 1]:
-                    decision.append(Class[i])
-                
-                elif Class[i] == 2 and Class[i - 1] == 0 and Class[i] == Class[switchLog[-1] - 1]:
-                    decision.append(Class[i])
-                
-                elif Class[i] == 2 and Class[i - 1] == 1 and Class[i] != Class[switchLog[-1] - 1]:
-                    decision.append(Class[i])
-                
-                elif Class[i] == 2 and Class[i - 1] == 1 and Class[i] == Class[switchLog[-1] - 1]:
-                    decision.append(Class[i])
-                
-                elif Class[i] == Class[i - 1] and Class[i] == 2:
-                    decision.append(Class[switchLog[-1] - 1])
-                
-                elif Class[i] == 2 and len(switchLog) == 0:
-                    decision.append(Class[i])
-                    
-            elif len(switchLog) == 0:
-                
-                decision.append(Class[i])
-                
-        else:
-            
-            decision.append(Class[i])
-            
-    return movingAvg(decision, 3)
-
 # Create objects
 adc = ADS1015.ADS1015()
 
@@ -391,7 +323,6 @@ for i in range(0, 5000):
             if len(Predictions) < 50:
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
                 Predictions.append(Current_Class)
-                print(len(Predictions))
 
             else:
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
@@ -410,6 +341,7 @@ for i in range(0, 5000):
                         FilteredPredictions.append(2)
 
                 # FilteredPredictions = classSwitch(Predictions)
+                FilteredPredictions = movingAvg(FilteredPredictions, 3)
                 print(FilteredPredictions[-1])
 
             duration = time.time() - start
