@@ -120,8 +120,6 @@ print('Model Initiatized')
 
 for i in range(0, 5000):
 
-    start = time.time()
-
     # Read sensor values
     Sensor_1 = adc.read_adc(0, gain = 4)
     Sensor_2 = adc.read_adc(1, gain = 4)
@@ -325,6 +323,9 @@ for i in range(0, 5000):
                 Predictions.append(Current_Class)
 
             else:
+
+                start = time.time()
+
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
                 Predictions.append(Current_Class)
 
@@ -344,7 +345,7 @@ for i in range(0, 5000):
                 FilteredPredictions = movingAvg(FilteredPredictions, 3)
                 print(FilteredPredictions[-1])
 
-            duration = time.time() - start
-            print(duration)
+                duration = time.time() - start
+                print(duration)
 
 
