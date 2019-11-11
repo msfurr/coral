@@ -347,6 +347,7 @@ for i in range(0, 5000):
 
                 duration = round((time.time() - start) * 1000, 5)
                 print(duration, 'ms')
+                print('   ')
                 print('~~~~~~~')
                 print('   ')
 
