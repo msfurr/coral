@@ -345,6 +345,6 @@ for i in range(0, 5000):
                 print(FilteredPredictions[-1])
 
             duration = time.time() - start
-            print(duration / len(data[0]))
+            print(duration)
 
 
