@@ -345,16 +345,16 @@ for i in range(0, 5000):
                 FilteredPredictions = movingAvg(FilteredPredictions, 3)
                 duration = round((time.time() - start) * 1000, 5)
 
-                #if FilteredPredictions[-1] == 1:
-                 #   display = 'EXHALE'
+                if FilteredPredictions[-1] == 1:
+                    display = 'EXHALE'
 
-                #elif FilteredPredictions[-1] == 0:
-                  #  display = 'INHALE'
+                elif FilteredPredictions[-1] == 0:
+                    display = 'INHALE'
 
-                #elif FilteredPredictions[-1] == 2:
-                 #   display = 'REST'
+                elif FilteredPredictions[-1] == 2:
+                    display = 'REST'
 
-                print(FilteredPredictions[-1])
+                print(display)
                 print(duration, 'ms')
                 print('   ')
                 print('~~~~~~~')
