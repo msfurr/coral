@@ -407,7 +407,7 @@ for i in range(0, 5000):
                     if len(FilteredPredictions) > 1:
                         FilteredPredictions.append(FilteredPredictions[-1])
                     else:
-                        decision.append(2)
+                        FilteredPredictions.append(2)
 
                 # FilteredPredictions = classSwitch(Predictions)
                 print(FilteredPredictions[-1])
