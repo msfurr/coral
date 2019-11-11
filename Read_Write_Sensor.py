@@ -12,13 +12,10 @@ CHANGE LOG
     10.30 - Real time kalman filters
     10.31 - Changing to absolute time
     10.31 - Real time kalman filters on derivative data
-<<<<<<< Updated upstream
     11.3 - Adjusting min / max scaling depending on stored recent values
 
 Next Steps
     Create rescaling condition for if the amplitudes increase
-=======
->>>>>>> Stashed changes
 
 """
 
