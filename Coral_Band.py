@@ -391,7 +391,7 @@ for i in range(0, 5000):
             if len(Predictions) < 50:
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
                 Predictions.append(Current_Class)
-                print(Current_Class)
+                print(len(Predictions))
 
             else:
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
