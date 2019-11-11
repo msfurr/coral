@@ -81,7 +81,7 @@ def main():
     data = np.float32([data])
     
     # Setup interpreter for inference
-    interpreter = Interpreter(model_path="my_tflite_model_4.tflite")
+    interpreter = Interpreter(model_path="model_4.tflite")
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
