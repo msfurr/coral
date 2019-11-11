@@ -33,6 +33,7 @@ def main():
     results= []
     for i in range(0, len(data[0])):
         input_data = data[0][[i]]
+        print(input_data)
         interpreter.set_tensor(input_details[0]['index'], input_data)
         interpreter.invoke()
         results.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
