@@ -188,6 +188,8 @@ print('Model Initiatized')
 
 for i in range(0, 5000):
 
+    start = time.time()
+
     # Read sensor values
     Sensor_1 = adc.read_adc(0, gain = 4)
     Sensor_2 = adc.read_adc(1, gain = 4)
@@ -409,5 +411,8 @@ for i in range(0, 5000):
 
                 # FilteredPredictions = classSwitch(Predictions)
                 print(FilteredPredictions[-1])
+
+            duration = time.time() - start
+            print(duration / len(data[0]))
 
 
