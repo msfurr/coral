@@ -346,15 +346,14 @@ for i in range(0, 5000):
                 duration = round((time.time() - start) * 1000, 5)
 
                 if FilteredPredictions[-1] == 1:
-                    display = 'EXHALE'
+                    print('EXHALE')
 
                 elif FilteredPredictions[-1] == 0:
-                    display = 'INHALE'
+                    print('INHALE')
 
                 elif FilteredPredictions[-1] == 2:
-                    display = 'REST'
+                    print('REST')
 
-                print(display)
                 print(duration, 'ms')
                 print('   ')
                 print('~~~~~~~')
