@@ -394,7 +394,20 @@ for i in range(0, 5000):
             else:
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
                 Predictions.append(Current_Class)
-                FilteredPredictions = classSwitch(Predictions)
+
+                if Predictions[i] == 1:
+                    FilteredPredictions.append(1)
+
+                elif Predictions[i] == 0:
+                    FilteredPredictions.append(0)
+
+                elif Predictions[i] == 2:
+                    if len(FilteredPredictions) > 1:
+                        FilteredPredictions.append(FilteredPredictions[-1])
+                    else:
+                        decision.append(2)
+
+                # FilteredPredictions = classSwitch(Predictions)
                 print(FilteredPredictions[-1])
 
 
