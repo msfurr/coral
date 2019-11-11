@@ -77,11 +77,11 @@ def classSwitch(Class):
 def main():
 
     # Gather data from text file
-    data = np.loadtxt('sensors_1.txt')
+    data = np.loadtxt('X_test.txt')
     data = np.float32([data])
     
     # Setup interpreter for inference
-    interpreter = Interpreter(model_path="model_4.tflite")
+    interpreter = Interpreter(model_path="my_tflite_model_4.tflite")
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
@@ -94,10 +94,11 @@ def main():
         interpreter.set_tensor(input_details[0]['index'], input_data)
         interpreter.invoke()
         results.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
-        print(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
     
     duration = time.time() - start
     print(duration / len(data[0]))
     return results
     
 results = main()
+export_csv = pd.DataFrame(results).to_csv(r'/home/mendel/coral/coral_results.csv', header = True, index = None)
+
