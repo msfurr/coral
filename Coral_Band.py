@@ -23,6 +23,8 @@ Change Log
     11.3 - Added real time adjusting of scaling range (as peaks trend smaller over time)
     11.4 - Added class switch - still need to test
     11.4 - Moved to independent repo
+    11.11 - Added class switch in real time
+
 
 """
 
@@ -112,7 +114,7 @@ startTime = time.time()
 i = 0
 
 # Instantiate TF Lite Model
-interpreter = Interpreter(model_path = "model_4.tflite")
+interpreter = Interpreter(model_path = "model_5.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
@@ -341,7 +343,6 @@ for i in range(0, 5000):
                     else:
                         FilteredPredictions.append(2)
 
-                # FilteredPredictions = classSwitch(Predictions)
                 FilteredPredictions = movingAvg(FilteredPredictions, 3)
                 duration = round((time.time() - start) * 1000, 5)
 
