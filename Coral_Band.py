@@ -345,7 +345,9 @@ for i in range(0, 5000):
                 FilteredPredictions = movingAvg(FilteredPredictions, 3)
                 print(FilteredPredictions[-1])
 
-                duration = round(time.time() - start, 5)
-                print(duration)
+                duration = round((time.time() - start) * 1000, 5)
+                print(duration, 'ms')
+                print('~~~~~~~')
+                print('   ')
 
 
