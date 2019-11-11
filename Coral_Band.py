@@ -397,13 +397,13 @@ for i in range(0, 5000):
                 Current_Class = np.argmax(interpreter.get_tensor(output_details[0]['index']))  
                 Predictions.append(Current_Class)
 
-                if Predictions[i] == 1:
+                if Current_Class == 1:
                     FilteredPredictions.append(1)
 
-                elif Predictions[i] == 0:
+                elif Current_Class == 0:
                     FilteredPredictions.append(0)
 
-                elif Predictions[i] == 2:
+                elif Current_Class == 2:
                     if len(FilteredPredictions) > 1:
                         FilteredPredictions.append(FilteredPredictions[-1])
                     else:
