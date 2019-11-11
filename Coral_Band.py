@@ -383,7 +383,6 @@ for i in range(0, 5000):
             data = np.float32([[current_estimate_1, current_estimate_2, current_estimate_3, current_estimate_4, d_current_estimate_1, d_current_estimate_2, d_current_estimate_3, d_current_estimate_4]])
             Raw_Data.append(data)
             input_data = data
-            print(input_data)
             interpreter.set_tensor(input_details[0]['index'], input_data)
             interpreter.invoke()
 
