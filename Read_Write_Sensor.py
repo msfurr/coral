@@ -255,29 +255,35 @@ for i in range(0, 10000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
-            if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6: 
-                Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 500
+            if j > RescaleRange:
 
-            if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6: 
-                Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6: 
+                    Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 500
 
-            if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6: 
-                Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 500
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6: 
+                    Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
 
-            if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6: 
-                Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6: 
+                    Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 500
 
-            if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1: 
-                Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6: 
+                    Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
 
-            if min(Sensor_2_Data[-RescaleRange:-1]) < 0.1: 
-                Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
+                if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1: 
+                    Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
 
-            if min(Sensor_3_Data[-RescaleRange:-1]) < 0.1: 
-                Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 500
+                if min(Sensor_2_Data[-RescaleRange:-1]) < 0.1: 
+                    Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
 
-            if min(Sensor_4_Data[-RescaleRange:-1]) < 0.1: 
-                Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
+                if min(Sensor_3_Data[-RescaleRange:-1]) < 0.1: 
+                    Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 500
+
+                if min(Sensor_4_Data[-RescaleRange:-1]) < 0.1: 
+                    Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
+
+                j = 0
+
+            j = j + 1
 
             # Gather values for displaying
             values[0] = Sensor_1
