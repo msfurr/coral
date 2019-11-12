@@ -283,8 +283,8 @@ for i in range(0, 10000):
             # Debugging for real time scaling changes
             print(Sensor_1)
             print('~~~~~~')
-            print('Min_1')
-            print('Max_1')
+            print(Min_1)
+            print(Max_1)
             #print(Min_1)
             #print(Max_1)
             #print('-----')
