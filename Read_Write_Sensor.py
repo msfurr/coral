@@ -70,7 +70,7 @@ print('Reading Google Coral Data values, press Ctrl-C to quit...')
 print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
 print('-' * 60)
 
-for i in range(0, 10000):
+for i in range(0, 1000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
@@ -289,7 +289,7 @@ Results = pd.DataFrame(data = SensorData)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
 
 # Pull command for file
-# mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
+# mdt pull /home/mendel/coral/Results.csv /Users/mikefurr/Documents/Raw_Data
 # mdt pull /home/mendel/coral/SensorData_Nov3.xlsx C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
