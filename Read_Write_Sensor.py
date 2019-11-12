@@ -70,7 +70,7 @@ print('Reading Google Coral Data values, press Ctrl-C to quit...')
 print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
 print('-' * 60)
 
-for i in range(0, 20000):
+for i in range(0, 10000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
@@ -89,10 +89,10 @@ for i in range(0, 20000):
 
         # At the end of data gathering set the min and max of the range
         if i == 10:
-            Min_1 = min(Range_1) - 1000
-            Min_2 = min(Range_2) - 1000
-            Min_3 = min(Range_3) - 1000
-            Min_4 = min(Range_4) - 1000
+            Min_1 = min(Range_1) - 800
+            Min_2 = min(Range_2) - 800
+            Min_3 = min(Range_3) - 800
+            Min_4 = min(Range_4) - 800
 
             Max_1 = min(Range_1) + 1500
             Max_2 = min(Range_2) + 1500
@@ -257,10 +257,7 @@ for i in range(0, 20000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
-                    print(Max_1)
                     Max_1 = min(RawData_1[-RescaleRange:-1]) + 1500
-                    print('~~~~')
-                    print(Max_1)
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
                     Max_2 = min(RawData_2[-RescaleRange:-1]) + 1500
@@ -282,7 +279,6 @@ for i in range(0, 20000):
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
             #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
-            time.sleep(2)
 
             # Debugging for real time scaling changes
             # print(Min_1)
@@ -297,12 +293,13 @@ for i in range(0, 20000):
 # Excel Spreadsheet (within current folder)
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
-writer = pd.ExcelWriter('sensor_training_3.xlsx', engine='xlsxwriter')
+writer = pd.ExcelWriter('SensorData_Nov3.xlsx', engine='xlsxwriter')
 Results.to_excel(writer, sheet_name = 'Sheet1')
 writer.save()
 
 # Pull command for file
 # mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
-# mdt pull /home/mendel/coral/SensorData_Nov3_2.xlsx C:\Users\msfur\Documents\Raw_Data
+# mdt pull /home/mendel/coral/SensorData_Nov3.xlsx C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
+
