@@ -97,7 +97,7 @@ for i in range(0, 10000):
             Max_1 = min(Range_1) + 1200
             Max_2 = min(Range_2) + 1200
             Max_3 = min(Range_3) + 1200
-            Max_4 = min(Range_4) + 1000
+            Max_4 = min(Range_4) + 1200
 
     # Begin data collection with scaling
     else:
