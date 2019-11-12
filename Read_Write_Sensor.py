@@ -267,18 +267,17 @@ for i in range(0, 10000):
             if Sensor_2 > 0.99:
                 Max_2 = Max_2 + 25
 
-            if Sensor_3 < 0.15 
+            if Sensor_3 < 0.15:
                 Min_3 = Min_3 - 100
 
             if Sensor_3 > 0.99:
                 Max_3 = Max_3 + 25
 
-            if Sensor_4 > 0.99:
-                Max_4 = Max_4 + 25
+            if Sensor_4 < 0.15:
+                Min_4 = Min_4 - 100
 
             if Sensor_4 > 0.99:
                 Max_4 = Max_4 + 25
-
 
             # Gather values for displaying
             values[0] = Sensor_1
