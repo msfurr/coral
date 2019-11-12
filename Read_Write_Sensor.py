@@ -97,6 +97,8 @@ for i in range(0, 5000):
             Max_3 = min(Range_3) + 1500
             Max_4 = min(Range_4) + 1500
 
+            print(Max_1)
+
     # Begin data collection with scaling
     else:
 
@@ -257,6 +259,9 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     Max_1 = min(RawData_1[-RescaleRange:-1]) + 1500
+                    print('NEW MAX')
+                    print('~~~')
+                    print(Max_1)
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
                     Max_2 = min(Sensor_2_Data[-RescaleRange:-1]) + 1500
