@@ -259,6 +259,7 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
                     Max_2 = Max_2 - 10
+                    print('Sensor 2 Scale Change')
 
                 if 1 - min(Sensor_1_Data[-RescaleRange:-1]) < 0.2:
                     Max_1 = Max_1 + 10
