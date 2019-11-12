@@ -282,12 +282,15 @@ for i in range(0, 10000):
 
             # Debugging for real time scaling changes
             print(Sensor_1)
+            print('~~~~~~')
+            print('Min_1')
+            print('Max_1')
             #print(Min_1)
             #print(Max_1)
             #print('-----')
             #print(max(RawData_1[-RescaleRange:-1]))
             #print('~~')
-            time.sleep(1)
+            time.sleep(0.5)
 
     # Pause for display
     time.sleep(0)
