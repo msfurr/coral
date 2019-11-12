@@ -70,7 +70,7 @@ print('-' * 60)
 
 j = 0
 
-for i in range(0, 5000):
+for i in range(0, 10000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
