@@ -306,7 +306,6 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.9: 
                     Max_1 = Max_1 - 400
-                    print('RESCALED')
 
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 25
