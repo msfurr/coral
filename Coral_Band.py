@@ -24,7 +24,7 @@ Change Log
     11.4 - Added class switch - still need to test
     11.4 - Moved to independent repo
     11.11 - Added class switch in real time
-
+    11.12 - Improved min / max scaling
 
 """
 
