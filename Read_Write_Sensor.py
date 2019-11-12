@@ -259,9 +259,8 @@ for i in range(0, 10000):
             
             if j > RescaleRange and Max_1 - Min_1 != 0:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.62:
-                    print(Max_1)
-                    Max_1 = Max_1 - 600
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.62: 
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1200
                     print('~~~~~~~RESCALED~~~~~~~~~')
 
                 if Sensor_1 > 0.99:
@@ -285,7 +284,7 @@ for i in range(0, 10000):
     time.sleep(0)
 
     # Rescale counter
-    j = j + 1
+    j =+ 1
 
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
