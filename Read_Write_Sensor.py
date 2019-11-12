@@ -253,7 +253,7 @@ for i in range(0, 10000):
             d_last_estimate_4 = d_current_estimate_4
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
-            if len(Sensor_1_Data) > RescaleRange:
+            if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.7 and Sensor_1 < 0.45:
                     Max_1 = Max_1 - 20
