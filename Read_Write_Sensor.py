@@ -258,27 +258,26 @@ for i in range(0, 10000):
             if j > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.9: 
-                    Max_1 = Max_1 - 500
+                    Max_1 = Max_1 - 400
                     print('RESCALED')
-                    time.sleep(0.5)
 
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 25
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.8: 
-                    Max_2 = Max_2 - 200
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_2 = Max_2 - 400
 
                 if Sensor_2 > 0.99:
                     Max_2 = Max_2 + 25
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.8: 
-                    Max_3 = Max_3 - 200
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_3 = Max_3 - 400
 
                 if Sensor_3 > 0.99:
                     Max_3 = Max_3 + 25
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.8: 
-                    Max_4 = Max_4 - 200
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_4 = Max_4 - 400
 
                 if Sensor_4 > 0.99:
                     Max_4 = Max_4 + 25

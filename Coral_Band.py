@@ -121,6 +121,8 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 print('Model Initiatized')
 
+j = 0
+
 for i in range(0, 5000):
 
     # Read sensor values
@@ -300,31 +302,36 @@ for i in range(0, 5000):
             d_last_estimate_4 = d_current_estimate_4
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
-            if len(Sensor_1_Data) > RescaleRange:
+            if j > RescaleRange and Max_1 - Min_1 != 0:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.7 and Sensor_1 < 0.45:
-                    Max_1 = Max_1 - 20
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_1 = Max_1 - 400
+                    print('RESCALED')
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5 and Sensor_2 < 0.45:
-                    Max_2 = Max_2 - 20
+                if Sensor_1 > 0.99:
+                    Max_1 = Max_1 + 25
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5 and Sensor_3 < 0.45:
-                    Max_3 = Max_3 - 20
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_2 = Max_2 - 400
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 and Sensor_4 < 0.45:
-                    Max_4 = Max_4 - 20
+                if Sensor_2 > 0.99:
+                    Max_2 = Max_2 + 25
 
-                if min(Sensor_1_Data[-RescaleRange_Max:-1]) > 0.7 and Sensor_1 > 0.2:
-                    Max_1 = Max_1 + 20
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_3 = Max_3 - 400
 
-                if min(Sensor_2_Data[-RescaleRange_Max:-1]) > 0.7 and Sensor_2 > 0.2:
-                    Max_2 = Max_2 + 20
+                if Sensor_3 > 0.99:
+                    Max_3 = Max_3 + 25
 
-                if min(Sensor_3_Data[-RescaleRange_Max:-1]) > 0.7 and Sensor_3 > 0.2:
-                    Max_3 = Max_3 + 20
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.9: 
+                    Max_4 = Max_4 - 400
 
-                if min(Sensor_4_Data[-RescaleRange_Max:-1]) > 0.7 and Sensor_4 > 0.2:
-                    Max_4 = Max_4 + 20
+                if Sensor_4 > 0.99:
+                    Max_4 = Max_4 + 25
+
+                j = 0
+
+            j = j + 1
 
             # Pull real time data into input tensor for classification
             data = np.float32([[current_estimate_1, current_estimate_2, current_estimate_3, current_estimate_4, d_current_estimate_1, d_current_estimate_2, d_current_estimate_3, d_current_estimate_4]])
