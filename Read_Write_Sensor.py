@@ -260,7 +260,7 @@ for i in range(0, 5000):
             if j > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1200
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 800
                     print('RESCALED')
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
