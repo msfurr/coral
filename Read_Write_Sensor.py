@@ -44,7 +44,8 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 450
+RescaleRange = 200
+RescaleRange_Max = 300
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -256,17 +257,29 @@ for i in range(0, 1000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1500
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.7 and Sensor_1 < 0.45:
+                    Max_1 = Max_1 - 20
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
-                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 1500
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5 and Sensor_2 < 0.45:
+                    Max_2 = Max_2 - 20
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2:
-                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 1500
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5 and Sensor_3 < 0.45:
+                    Max_3 = Max_3 - 20
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2:
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 1500
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 and Sensor_4 < 0.45:
+                    Max_4 = Max_4 - 20
+
+                if min(Sensor_1_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_1 > 0.2:
+                    Max_1 = Max_1 + 20
+
+                if min(Sensor_2_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_2 > 0.2:
+                    Max_2 = Max_2 + 20
+
+                if min(Sensor_3_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_3 > 0.2:
+                    Max_3 = Max_3 + 20
+
+                if min(Sensor_4_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_4 > 0.2:
+                    Max_4 = Max_4 + 20
 
             # Gather values for displaying
             values[0] = Sensor_1
@@ -283,7 +296,6 @@ for i in range(0, 1000):
     # Pause for display
     time.sleep(0)
 
-# Excel Spreadsheet (within current folder)
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)

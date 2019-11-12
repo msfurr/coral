@@ -44,8 +44,8 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 20
-RescaleRange_Max = 100
+RescaleRange = 200
+RescaleRange_Max = 300
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -301,7 +301,7 @@ Results = pd.DataFrame(data = SensorData)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
 
 # Pull command for file
-# mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
+# mdt pull /home/mendel/coral/Results.csv /Users/mikefurr/Documents/Raw_Data
 # mdt pull /home/mendel/coral/SensorData_Nov3.xlsx C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
