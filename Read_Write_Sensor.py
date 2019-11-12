@@ -72,6 +72,8 @@ for i in range(0, 5000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
+    j = 0
+
     # Read sensor values
     Sensor_1 = adc.read_adc(0, gain = 4)
     Sensor_2 = adc.read_adc(1, gain = 4)
@@ -255,7 +257,7 @@ for i in range(0, 5000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             
-            if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
+            if j > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     Max_1 = min(RawData_1[-RescaleRange:-1]) + 1200
@@ -284,6 +286,8 @@ for i in range(0, 5000):
                 if Sensor_4 > 0.99:
                     Max_4 = Max_4 + 10
 
+                j = 0
+
             # Gather values for displaying
             values[0] = Sensor_1
             values[1] = Sensor_2
@@ -298,6 +302,8 @@ for i in range(0, 5000):
 
     # Pause for display
     time.sleep(0)
+
+    j =+ 1
 
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
