@@ -268,6 +268,9 @@ for i in range(0, 10000):
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 and Sensor_1 < 0.45:
                     Max_4 = Max_3 - 100
 
+                if min(Sensor_1_Data[-RescaleRange:-1]) > 0.8 and Sensor_1 > 0.2:
+                    Max_1 = Max_1 + 100
+
             # Gather values for displaying
             values[0] = Sensor_1
             values[1] = Sensor_2
