@@ -262,6 +262,7 @@ for i in range(0, 5000):
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     print(Max_1)
                     Max_1 = Max_1 - 600
+                    Min_1 = Min_1 - 300
                     print('RESCALED')
                     print(Max_1)
                     time.sleep(2)
