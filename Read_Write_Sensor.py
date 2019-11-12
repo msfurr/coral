@@ -258,7 +258,7 @@ for i in range(0, 20000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
                     print(Max_1)
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1200
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 1500
                     print('~~~~')
                     print(Max_1)
 
