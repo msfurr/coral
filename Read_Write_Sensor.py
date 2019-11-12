@@ -255,28 +255,28 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
-                    Max_1 = Max_1 - 20
+                    Max_1 = Max_1 - 100
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
-                    Max_2 = Max_2 - 20
+                    Max_2 = Max_2 - 100
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5:
-                    Max_3 = Max_3 - 20
+                    Max_3 = Max_3 - 100
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5:
-                    Max_4 = Max_4 - 20
+                    Max_4 = Max_4 - 100
 
                 if Sensor_1 > 0.99:
-                    Max_1 = Max_1 + 10
+                    Max_1 = Max_1 + 50
 
                 if Sensor_2 > 0.99:
-                    Max_2 = Max_2 + 10
+                    Max_2 = Max_2 + 50
 
                 if Sensor_3 > 0.99:
-                    Max_3 = Max_3 + 10
+                    Max_3 = Max_3 + 50
 
                 if Sensor_4 > 0.99:
-                    Max_4 = Max_4 + 10
+                    Max_4 = Max_4 + 50
 
             # Gather values for displaying
             values[0] = Sensor_1
