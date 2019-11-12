@@ -88,10 +88,10 @@ for i in range(0, 5000):
 
         # At the end of data gathering set the min and max of the range
         if i == 10:
-            Min_1 = min(Range_1) - 800
-            Min_2 = min(Range_2) - 800
-            Min_3 = min(Range_3) - 800
-            Min_4 = min(Range_4) - 800
+            Min_1 = min(Range_1) - 400
+            Min_2 = min(Range_2) - 400
+            Min_3 = min(Range_3) - 400
+            Min_4 = min(Range_4) - 400
 
             Max_1 = min(Range_1) + 1500
             Max_2 = min(Range_2) + 1500
@@ -267,10 +267,10 @@ for i in range(0, 5000):
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.3 and Sensor_4 < 0.3:
                     Max_4 = Max_4 - 20
 
-                if min(Sensor_1_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_1 > 0.2:
+                if min(Sensor_1_Data[-RescaleRange_Max:-1]) > 0.8:
                     Max_1 = Max_1 + 20
 
-                if min(Sensor_2_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_2 > 0.2:
+                if min(Sensor_2_Data[-RescaleRange_Max:-1]) > 0.8:
                     Max_2 = Max_2 + 20
 
                 if min(Sensor_3_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_3 > 0.2:
