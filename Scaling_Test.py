@@ -281,7 +281,7 @@ for i in range(0, 10000):
             #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
             # Debugging for real time scaling changes
-            print(Sensor_1, '~', Sensor_2, '~')
+            print(Sensor_1, '~', Sensor_3, '~')
             print('~~~~~~')
             time.sleep(0.1)
 
