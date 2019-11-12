@@ -44,7 +44,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 50
+RescaleRange = 20
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -286,7 +286,7 @@ for i in range(0, 10000):
             # Debugging for real time scaling changes
             print(Sensor_1, '~', Sensor_3, '~')
             print('~~~~~~')
-            time.sleep(0.1)
+            time.sleep(0.01)
 
     # Pause for display
     time.sleep(0)
