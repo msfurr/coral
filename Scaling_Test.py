@@ -45,6 +45,7 @@ d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
 RescaleRange = 20
+RescaleRange_Max = 100
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -256,20 +257,29 @@ for i in range(0, 10000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5 and Sensor_1 < 0.45:
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.7 and Sensor_1 < 0.45:
                     Max_1 = Max_1 - 100
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5 and Sensor_1 < 0.45:
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5 and Sensor_2 < 0.45:
                     Max_2 = Max_2 - 100
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5 and Sensor_1 < 0.45:
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5 and Sensor_3 < 0.45:
                     Max_3 = Max_3 - 100
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 and Sensor_1 < 0.45:
-                    Max_4 = Max_3 - 100
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 and Sensor_4 < 0.45:
+                    Max_4 = Max_4 - 100
 
-                if min(Sensor_1_Data[-RescaleRange:-1]) > 0.8 and Sensor_1 > 0.2:
+                if min(Sensor_1_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_1 > 0.2:
                     Max_1 = Max_1 + 100
+
+                if min(Sensor_2_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_2 > 0.2:
+                    Max_2 = Max_2 + 100
+
+                if min(Sensor_3_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_3 > 0.2:
+                    Max_3 = Max_3 + 100
+
+                if min(Sensor_4_Data[-RescaleRange_Max:-1]) > 0.8 and Sensor_4 > 0.2:
+                    Max_4 = Max_4 + 100
 
             # Gather values for displaying
             values[0] = Sensor_1
@@ -284,9 +294,8 @@ for i in range(0, 10000):
             #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
             # Debugging for real time scaling changes
-            print(Sensor_1, '~', Sensor_3, '~')
+            print(Sensor_1, '        ', Sensor_3, '~')
             print('~~~~~~')
-            time.sleep(0.01)
 
     # Pause for display
     time.sleep(0)
