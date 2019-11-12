@@ -258,7 +258,7 @@ for i in range(0, 5000):
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     Max_1 = Max_1 - 20
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.3 and Sensor_2 < 0.3:
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
                     Max_2 = Max_2 - 20
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.3 and Sensor_3 < 0.3:
