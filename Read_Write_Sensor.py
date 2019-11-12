@@ -283,7 +283,8 @@ for i in range(0, 10000):
 
                 j = 0
 
-            j = j + 1
+            else:
+                j = j + 1
 
             # Gather values for displaying
             values[0] = Sensor_1
