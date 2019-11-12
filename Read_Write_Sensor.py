@@ -42,8 +42,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 50
-RescaleRange_Max = 50
+RescaleRange = 100
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
