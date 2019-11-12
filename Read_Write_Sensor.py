@@ -256,10 +256,10 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
-                    Max_1 = Max_1 - 10
+                    Max_1 = min(Sensor_1_Data[-RescaleRange:-1]) + 1500
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
-                    Max_2 = Max_2 - 10
+                    Max_2 = min(Sensor_2_Data[-RescaleRange:-1]) + 1500
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5:
                     Max_3 = Max_3 - 10
