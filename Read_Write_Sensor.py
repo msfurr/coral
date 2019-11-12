@@ -264,7 +264,7 @@ for i in range(0, 5000):
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 10
 
-                if Sensor_2 > 0.99
+                if Sensor_2 > 0.99:
                     Max_2 = Max_2 + 10
 
 
