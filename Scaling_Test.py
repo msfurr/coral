@@ -281,12 +281,13 @@ for i in range(0, 10000):
             #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
             # Debugging for real time scaling changes
-            print(Min_1)
-            print(Max_1)
-            print('-----')
-            print(max(RawData_1[-RescaleRange:-1]))
-            print('~~')
-            time.sleep(2)
+            print(Sensor_1)
+            #print(Min_1)
+            #print(Max_1)
+            #print('-----')
+            #print(max(RawData_1[-RescaleRange:-1]))
+            #print('~~')
+            time.sleep(1)
 
     # Pause for display
     time.sleep(0)
