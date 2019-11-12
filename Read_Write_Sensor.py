@@ -42,7 +42,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 600
+RescaleRange = 300
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -255,29 +255,17 @@ for i in range(0, 10000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
-            if Sensor_1 < 0.15: 
-                Min_1 = Min_1 - 50
+            if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6: 
+                Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 500
 
-            if Sensor_1 > 0.99:
-                Max_1 = Max_1 + 25
+            if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6: 
+                Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
 
-            if Sensor_2 < 0.15: 
-                Min_2 = Min_2 - 50
+            if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6: 
+                Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 500
 
-            if Sensor_2 > 0.99:
-                Max_2 = Max_2 + 25
-
-            if Sensor_3 < 0.15:
-                Min_3 = Min_3 - 50
-
-            if Sensor_3 > 0.99:
-                Max_3 = Max_3 + 25
-
-            if Sensor_4 < 0.15:
-                Min_4 = Min_4 - 50
-
-            if Sensor_4 > 0.99:
-                Max_4 = Max_4 + 25
+            if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6: 
+                Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
 
             # Gather values for displaying
             values[0] = Sensor_1
