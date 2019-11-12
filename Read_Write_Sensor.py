@@ -81,14 +81,14 @@ for i in range(0, 10000):
     Sensor_4 = adc.read_adc(3, gain = 4)
 
     # Create a range for scaling based on first 10 values
-    if i < 11:
+    if i < 201:
         Range_1.append(Sensor_1)
         Range_2.append(Sensor_2)
         Range_3.append(Sensor_3)
         Range_4.append(Sensor_4)
 
         # At the end of data gathering set the min and max of the range
-        if i == 10:
+        if i == 200:
             Min_1 = min(Range_1) - 400
             Min_2 = min(Range_2) - 400
             Min_3 = min(Range_3) - 400
@@ -141,7 +141,7 @@ for i in range(0, 10000):
         # Kalman Filtering
         # For the first iteration of real data collection,
         # set the last estimate to the first value collected
-        if i == 11:
+        if i == 201:
             last_estimate_1 = Sensor_1
             last_estimate_2 = Sensor_2
             last_estimate_3 = Sensor_3
