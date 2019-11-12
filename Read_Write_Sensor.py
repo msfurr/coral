@@ -267,6 +267,18 @@ for i in range(0, 10000):
             if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6: 
                 Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
 
+            if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1: 
+                Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
+
+            if min(Sensor_2_Data[-RescaleRange:-1]) < 0.1: 
+                Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
+
+            if min(Sensor_3_Data[-RescaleRange:-1]) < 0.1: 
+                Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 500
+
+            if min(Sensor_4_Data[-RescaleRange:-1]) < 0.1: 
+                Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
+
             # Gather values for displaying
             values[0] = Sensor_1
             values[1] = Sensor_2
