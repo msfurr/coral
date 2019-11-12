@@ -65,11 +65,11 @@ d_q = 0.08
 # Initiatize timer
 startTime = time.time()
 
-#print('Reading Google Coral Data values, press Ctrl-C to quit...')
+print('Reading Google Coral Data values, press Ctrl-C to quit...')
 
 # Print column headers
-#print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
-#print('-' * 60)
+print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
+print('-' * 60)
 
 for i in range(0, 10000):
     # Read all the ADC channel values in a list
@@ -291,14 +291,14 @@ for i in range(0, 10000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
-
-            # Debugging for real time scaling changes
-            print(Sensor_1, '        ', Sensor_3, '~')
-            print('~~~~~~')
+            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
     # Pause for display
     time.sleep(0)
+
+SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
+Results = pd.DataFrame(data = SensorData)
+export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
 
 # Pull command for file
 # mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data

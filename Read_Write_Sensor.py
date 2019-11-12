@@ -278,14 +278,7 @@ for i in range(0, 10000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
-
-            # Debugging for real time scaling changes
-            # print(Min_1)
-            # print(Max_1)
-            # print('-----')
-            # print(max(RawData_1[-RescaleRange:-1]))
-            # print('~~')
+            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
     # Pause for display
     time.sleep(0)
@@ -293,9 +286,7 @@ for i in range(0, 10000):
 # Excel Spreadsheet (within current folder)
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
-writer = pd.ExcelWriter('SensorData_Nov3.xlsx', engine='xlsxwriter')
-Results.to_excel(writer, sheet_name = 'Sheet1')
-writer.save()
+export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
 
 # Pull command for file
 # mdt pull /home/mendel/coral/SensorData_Nov3.xlsx /Users/mikefurr/Documents/Raw_Data
