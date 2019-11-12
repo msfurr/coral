@@ -261,11 +261,11 @@ for i in range(0, 5000):
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
                     Max_2 = Max_2 - 10
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.3 and Sensor_3 < 0.3:
-                    Max_3 = Max_3 - 20
+                if 1 - min(Sensor_1_Data[-RescaleRange:-1]) < 0.2:
+                    Max_1 = Max_1 + 10
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.3 and Sensor_4 < 0.3:
-                    Max_4 = Max_4 - 20
+                if 1 - min(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
+                    Max_2 = Max_2 + 10
 
 
             # Gather values for displaying
