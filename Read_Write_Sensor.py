@@ -254,12 +254,17 @@ for i in range(0, 5000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.7:
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     Max_1 = Max_1 - 20
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.7:
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
                     Max_2 = Max_2 - 20
-                    print('Sensor 2 Scale Change')
+
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5:
+                    Max_3 = Max_3 - 20
+
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5:
+                    Max_4 = Max_4 - 20
 
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 10
@@ -267,6 +272,11 @@ for i in range(0, 5000):
                 if Sensor_2 > 0.99:
                     Max_2 = Max_2 + 10
 
+                if Sensor_3 > 0.99:
+                    Max_3 = Max_3 + 10
+
+                if Sensor_4 > 0.99:
+                    Max_4 = Max_4 + 10
 
             # Gather values for displaying
             values[0] = Sensor_1
