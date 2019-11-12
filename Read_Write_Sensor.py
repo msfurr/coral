@@ -89,10 +89,10 @@ for i in range(0, 10000):
 
         # At the end of data gathering set the min and max of the range
         if i == 200:
-            Min_1 = min(Range_1) - 800
-            Min_2 = min(Range_2) - 800
-            Min_3 = min(Range_3) - 800
-            Min_4 = min(Range_4) - 800
+            Min_1 = min(Range_1) - 500
+            Min_2 = min(Range_2) - 500
+            Min_3 = min(Range_3) - 500
+            Min_4 = min(Range_4) - 500
 
             Max_1 = max(Range_1) + 500
             Max_2 = max(Range_2) + 500
@@ -256,25 +256,25 @@ for i in range(0, 10000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
             if Sensor_1 < 0.15: 
-                Min_1 = Min_1 - 100
+                Min_1 = Min_1 - 50
 
             if Sensor_1 > 0.99:
                 Max_1 = Max_1 + 25
 
             if Sensor_2 < 0.15: 
-                Min_2 = Min_2 - 100
+                Min_2 = Min_2 - 50
 
             if Sensor_2 > 0.99:
                 Max_2 = Max_2 + 25
 
             if Sensor_3 < 0.15:
-                Min_3 = Min_3 - 100
+                Min_3 = Min_3 - 50
 
             if Sensor_3 > 0.99:
                 Max_3 = Max_3 + 25
 
             if Sensor_4 < 0.15:
-                Min_4 = Min_4 - 100
+                Min_4 = Min_4 - 50
 
             if Sensor_4 > 0.99:
                 Max_4 = Max_4 + 25
