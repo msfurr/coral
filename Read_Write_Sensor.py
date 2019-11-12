@@ -255,16 +255,16 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
-                    Max_1 = Max_1 - 100
+                    Max_1 = Max_1 - 20
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
-                    Max_2 = Max_2 - 100
+                    Max_2 = Max_2 - 20
                     print('Sensor 2 Scale Change')
 
-                if 1 - min(Sensor_1_Data[-RescaleRange:-1]) < 0.2:
+                if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 10
 
-                if 1 - min(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
+                if Sensor_2 > 0.99
                     Max_2 = Max_2 + 10
 
 
