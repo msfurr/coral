@@ -70,7 +70,7 @@ print('Reading Google Coral Data values, press Ctrl-C to quit...')
 print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
 print('-' * 60)
 
-for i in range(0, 50000):
+for i in range(0, 20000):
     # Read all the ADC channel values in a list
     values = [0]*9
 
