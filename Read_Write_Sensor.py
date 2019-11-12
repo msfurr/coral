@@ -261,7 +261,7 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.65:
                     print(Max_1)
-                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 500
+                    Max_1 = Max_1 - 200
 
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 200
