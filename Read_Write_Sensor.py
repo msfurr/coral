@@ -99,8 +99,6 @@ for i in range(0, 10000):
             Max_3 = min(Range_3) + 1500
             Max_4 = min(Range_4) + 1500
 
-            print(Max_1)
-
     # Begin data collection with scaling
     else:
 
@@ -278,7 +276,7 @@ for i in range(0, 10000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
+            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
     # Pause for display
     time.sleep(0)
