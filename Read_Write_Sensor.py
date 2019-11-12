@@ -258,25 +258,25 @@ for i in range(0, 10000):
             if j > RescaleRange and Max_1 - Min_1 != 0:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.62: 
-                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 750
+                    Max_1 = min(RawData_1[-RescaleRange:-1]) + 550
 
                 if Sensor_1 > 0.99:
                     Max_1 = Max_1 + 100
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.62: 
-                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 750
+                    Max_2 = min(RawData_2[-RescaleRange:-1]) + 550
 
                 if Sensor_2 > 0.99:
                     Max_2 = Max_2 + 100
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.62: 
-                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 750
+                    Max_3 = min(RawData_3[-RescaleRange:-1]) + 550
 
                 if Sensor_3 > 0.99:
                     Max_3 = Max_3 + 100
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.62: 
-                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 750
+                    Max_4 = min(RawData_4[-RescaleRange:-1]) + 550
 
                 if Sensor_4 > 0.99:
                     Max_4 = Max_4 + 100
