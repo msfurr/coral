@@ -261,31 +261,13 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
                     print(Max_1)
-                    Max_1 = Max_1 - 500
+                    Max_1 = Max_1 - 700
                     print('RESCALED')
                     print(Max_1)
                     time.sleep(2)
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5:
-                    Max_2 = min(Sensor_2_Data[-RescaleRange:-1]) + 1500
-
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5:
-                    Max_3 = Max_3 - 10
-
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5:
-                    Max_4 = Max_4 - 10
-
                 if Sensor_1 > 0.99:
-                    Max_1 = Max_1 + 10
-
-                if Sensor_2 > 0.99:
-                    Max_2 = Max_2 + 10
-
-                if Sensor_3 > 0.99:
-                    Max_3 = Max_3 + 10
-
-                if Sensor_4 > 0.99:
-                    Max_4 = Max_4 + 10
+                    Max_1 = Max_1 + 200
 
                 j = 0
 
