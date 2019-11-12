@@ -256,8 +256,8 @@ for i in range(0, 10000):
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
-                    Max_1 = Max_1 - 50
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5 and max(Sensor_1_Data[-RescaleRange:-1]) < 0.6:
+                    Max_1 = Max_1 - 100
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2:
                     Max_2 = min(RawData_2[-RescaleRange:-1]) + 1500
