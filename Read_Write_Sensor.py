@@ -279,6 +279,7 @@ for i in range(0, 5000):
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15: 
                     Min_4 = min(RawData_4[-RescaleRange:-1]) - 500
 
+                """
                 if max(Sensor_1_Data[-RescaleRange:-1]) > 0.99: 
                     Max_1 = Max_1 + 20
 
@@ -290,6 +291,7 @@ for i in range(0, 5000):
 
                 if max(Sensor_4_Data[-RescaleRange:-1]) > 0.99: 
                     Max_4 = Max_4 + 20
+                """
 
 
             # Gather values for displaying
