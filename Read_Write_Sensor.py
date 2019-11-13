@@ -92,10 +92,10 @@ for i in range(0, 5000):
             Min_3 = min(Range_3) - 500
             Min_4 = min(Range_4) - 500
 
-            Max_1 = max(Range_1) + 500
-            Max_2 = max(Range_2) + 500
-            Max_3 = max(Range_3) + 500
-            Max_4 = max(Range_4) + 500
+            Max_1 = max(Range_1) + 300
+            Max_2 = max(Range_2) + 300
+            Max_3 = max(Range_3) + 300
+            Max_4 = max(Range_4) + 300
 
     # Begin data collection with scaling
     else:
@@ -256,16 +256,16 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
-                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 500
+                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 300
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5 or 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.1:
-                    Max_2 = max(RawData_2[-RescaleRange:-1]) + 500
+                    Max_2 = max(RawData_2[-RescaleRange:-1]) + 300
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5 or 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.1:
-                    Max_3 = max(RawData_3[-RescaleRange:-1]) + 500
+                    Max_3 = max(RawData_3[-RescaleRange:-1]) + 300
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
-                    Max_4 = max(RawData_4[-RescaleRange:-1]) + 500
+                    Max_4 = max(RawData_4[-RescaleRange:-1]) + 300
 
                 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
