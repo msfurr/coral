@@ -114,7 +114,7 @@ startTime = time.time()
 i = 0
 
 # Instantiate TF Lite Model
-interpreter = Interpreter(model_path = "model_5.tflite")
+interpreter = Interpreter(model_path = "model_4.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
