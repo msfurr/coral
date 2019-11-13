@@ -283,13 +283,13 @@ for i in range(0, 10000):
                     Max_1 = Max_1 + 20
 
                 if max(Sensor_2_Data[-RescaleRange:-1]) > 0.99: 
-                    Min_2 = Max_2 + 20
+                    Max_2 = Max_2 + 20
 
                 if max(Sensor_3_Data[-RescaleRange:-1]) > 0.99: 
-                    Min_3 = Max_3 + 20
+                    Max_3 = Max_3 + 20
 
                 if max(Sensor_4_Data[-RescaleRange:-1]) > 0.99: 
-                    Min_4 = Max_4 + 20
+                    Max_4 = Max_4 + 20
 
 
             # Gather values for displaying
