@@ -255,29 +255,41 @@ for i in range(0, 10000):
 
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6: 
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5: 
                     Max_1 = max(RawData_1[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6: 
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.5: 
                     Max_2 = max(RawData_2[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6: 
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.5: 
                     Max_3 = max(RawData_3[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6: 
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5: 
                     Max_4 = max(RawData_4[-RescaleRange:-1]) + 500
 
-                if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1: 
+                if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15: 
                     Min_1 = min(RawData_1[-RescaleRange:-1]) - 500
 
-                if min(Sensor_2_Data[-RescaleRange:-1]) < 0.1: 
+                if min(Sensor_2_Data[-RescaleRange:-1]) < 0.15: 
                     Min_2 = min(RawData_2[-RescaleRange:-1]) - 500
 
-                if min(Sensor_3_Data[-RescaleRange:-1]) < 0.1: 
+                if min(Sensor_3_Data[-RescaleRange:-1]) < 0.15: 
                     Min_3 = min(RawData_3[-RescaleRange:-1]) - 500
 
-                if min(Sensor_4_Data[-RescaleRange:-1]) < 0.1: 
+                if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15: 
                     Min_4 = min(RawData_4[-RescaleRange:-1]) - 500
+
+                if max(Sensor_1_Data[-RescaleRange:-1]) > 0.99: 
+                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 500
+
+                if max(Sensor_2_Data[-RescaleRange:-1]) > 0.99: 
+                    Min_2 = max(RawData_2[-RescaleRange:-1]) + 500
+
+                if max(Sensor_3_Data[-RescaleRange:-1]) > 0.99: 
+                    Min_3 = max(RawData_3[-RescaleRange:-1]) + 500
+
+                if max(Sensor_4_Data[-RescaleRange:-1]) > 0.99: 
+                    Min_4 = max(RawData_4[-RescaleRange:-1]) + 500
 
 
             # Gather values for displaying
