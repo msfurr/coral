@@ -255,16 +255,16 @@ for i in range(0, 5000):
 
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2: 
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1: 
                     Max_1 = max(RawData_1[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2: 
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.1: 
                     Max_2 = max(RawData_2[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2: 
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.1: 
                     Max_3 = max(RawData_3[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2: 
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1: 
                     Max_4 = max(RawData_4[-RescaleRange:-1]) + 500
 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15: 
