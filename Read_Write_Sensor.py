@@ -87,10 +87,10 @@ for i in range(0, 5000):
 
         # At the end of data gathering set the min and max of the range
         if i == 200:
-            Min_1 = min(Range_1) - 500
-            Min_2 = min(Range_2) - 500
-            Min_3 = min(Range_3) - 500
-            Min_4 = min(Range_4) - 500
+            Min_1 = min(Range_1) - 300
+            Min_2 = min(Range_2) - 300
+            Min_3 = min(Range_3) - 300
+            Min_4 = min(Range_4) - 300
 
             Max_1 = max(Range_1) + 270
             Max_2 = max(Range_2) + 270
@@ -269,16 +269,16 @@ for i in range(0, 5000):
 
                 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
-                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 500
+                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 300
 
                 if min(Sensor_2_Data[-RescaleRange:-1]) < 0.1:
-                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 500
+                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 300
 
                 if min(Sensor_3_Data[-RescaleRange:-1]) < 0.1:
-                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 500
+                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 300
 
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
-                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 500
+                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 300
                 
 
             # Gather values for displaying
