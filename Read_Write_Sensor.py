@@ -42,7 +42,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 300
+RescaleRange = 200
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -278,21 +278,6 @@ for i in range(0, 5000):
 
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15: 
                     Min_4 = min(RawData_4[-RescaleRange:-1]) - 500
-
-                """
-                if max(Sensor_1_Data[-RescaleRange:-1]) > 0.99: 
-                    Max_1 = Max_1 + 20
-
-                if max(Sensor_2_Data[-RescaleRange:-1]) > 0.99: 
-                    Max_2 = Max_2 + 20
-
-                if max(Sensor_3_Data[-RescaleRange:-1]) > 0.99: 
-                    Max_3 = Max_3 + 20
-
-                if max(Sensor_4_Data[-RescaleRange:-1]) > 0.99: 
-                    Max_4 = Max_4 + 20
-                """
-
 
             # Gather values for displaying
             values[0] = Sensor_1
