@@ -253,6 +253,7 @@ for i in range(0, 5000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
+            """
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.5:
@@ -266,6 +267,8 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.5 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
                     Max_4 = max(RawData_4[-RescaleRange:-1]) + 250
+
+            """
                 
 
             # Gather values for displaying
