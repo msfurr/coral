@@ -300,7 +300,7 @@ export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, in
 
 # Pull command for file
 # mdt pull /home/mendel/coral/Results.csv /Users/mikefurr/Documents/Raw_Data
-# mdt pull /home/mendel/coral/SensorData_Nov3.xlsx C:\Users\msfur\Documents\Raw_Data
+# mdt pull /home/mendel/coral/Results.csv C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
 
