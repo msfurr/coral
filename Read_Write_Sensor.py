@@ -253,7 +253,6 @@ for i in range(0, 7000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
-
             """
             if len(Sensor_1_Data) > RescaleRange:
 
