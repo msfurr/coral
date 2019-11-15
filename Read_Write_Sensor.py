@@ -87,15 +87,15 @@ for i in range(0, 7000):
 
         # At the end of data gathering set the min and max of the range
         if i == 400:
-            Min_1 = min(Range_1) - 450
-            Min_2 = min(Range_2) - 450
-            Min_3 = min(Range_3) - 450
-            Min_4 = min(Range_4) - 700
+            Min_1 = min(Range_1) - 1000
+            Min_2 = min(Range_2) - 1000
+            Min_3 = min(Range_3) - 1000
+            Min_4 = min(Range_4) - 1000
 
-            Max_1 = max(Range_1) + 450
-            Max_2 = max(Range_2) + 450
-            Max_3 = max(Range_3) + 450
-            Max_4 = max(Range_4) + 450
+            Max_1 = max(Range_1) + 1000
+            Max_2 = max(Range_2) + 1000
+            Max_3 = max(Range_3) + 1000
+            Max_4 = max(Range_4) + 1000
 
     # Begin data collection with scaling
     else:
