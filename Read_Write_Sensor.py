@@ -90,7 +90,7 @@ for i in range(0, 7000):
             Min_1 = min(Range_1) - 450
             Min_2 = min(Range_2) - 450
             Min_3 = min(Range_3) - 450
-            Min_4 = min(Range_4) - 450
+            Min_4 = min(Range_4) - 700
 
             Max_1 = max(Range_1) + 450
             Max_2 = max(Range_2) + 450
