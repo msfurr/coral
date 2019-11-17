@@ -257,56 +257,28 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
-                    Max_1 = Max_1 - 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
+                    Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 400
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
-                    Max_2 = Max_2 - 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
+                    Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 400
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.4:
-                    Max_3 = Max_3 - 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
+                    Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 400
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.4:
-                    Max_4 = Max_4 - 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
-
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
-                    Max_1 = Max_1 + 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
-
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.15:
-                    Max_2 = Max_2 + 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
-
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.15:
-                    Max_3 = Max_3 + 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
-
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.15:
-                    Max_4 = Max_4 + 50
-                    #print('SCALE CHANGE')
-                    #time.sleep(0.5)
+                    Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 400
 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
-                    Min_1 = Min_1 - 50
+                    Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 400
 
                 if min(Sensor_2_Data[-RescaleRange:-1]) < 0.15:
-                    Min_2 = Min_2 - 50
+                    Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 400
 
                 if min(Sensor_3_Data[-RescaleRange:-1]) < 0.15:
-                    Min_3 = Min_3 - 50
+                    Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 400
 
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15:
-                    Min_4 = Min_4 - 50
+                    Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 400
 
             # Gather values for displaying
             values[0] = Sensor_1
