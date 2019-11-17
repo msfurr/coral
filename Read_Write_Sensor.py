@@ -257,19 +257,19 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
                     Max_1 = max(RawData_1[-RescaleRange:-1]) + 200
-                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 200
+                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 100
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.1:
                     Max_2 = max(RawData_2[-RescaleRange:-1]) + 200
-                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 200
+                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 100
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.1:
                     Max_3 = max(RawData_3[-RescaleRange:-1]) + 200
-                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 200
+                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 100
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
                     Max_4 = max(RawData_4[-RescaleRange:-1]) + 200
-                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 200
+                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 100
                 
 
             # Gather values for displaying
