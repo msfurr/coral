@@ -42,7 +42,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 320
+RescaleRange = 400
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -256,7 +256,7 @@ for i in range(0, 5000):
             
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3:
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.3 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
                     Max_1 = max(RawData_1[-RescaleRange:-1]) + 200
                     Min_1 = min(RawData_1[-RescaleRange:-1]) - 200
                     print('SCALED')
