@@ -257,9 +257,9 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2:
+                    print(max(Sensor_1_Data[-RescaleRange:-1]))
                     Max_1 = max(RawData_1[-RescaleRange:-1]) + 200
                     Min_1 = min(RawData_1[-RescaleRange:-1]) - 200
-                    print('RESCALED')
 
                 """if 1 - max(Sensor_2_Data[-RescaleRange:]) > 0.4:
                     Max_2 = max(Sensor_2_Data[-RescaleRange:]) + 700
@@ -284,7 +284,7 @@ for i in range(0, 5000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
+            #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
     # Pause for display
     time.sleep(0)
