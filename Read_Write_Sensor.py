@@ -256,50 +256,38 @@ for i in range(0, 5000):
             
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6:
-                    Max_1 = Max_1 - 75
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
+                    Max_1 = Max_1 - 50
                     #print('SCALE CHANGE')
                     #time.sleep(0.5)
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6:
-                    Max_2 = Max_2 - 75
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
+                    Max_2 = Max_2 - 50
                     #print('SCALE CHANGE')
                     #time.sleep(0.5)
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6:
-                    Max_3 = Max_3 - 75
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.4:
+                    Max_3 = Max_3 - 50
                     #print('SCALE CHANGE')
                     #time.sleep(0.5)
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6:
-                    Max_4 = Max_4 - 75
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.4:
+                    Max_4 = Max_4 - 50
                     #print('SCALE CHANGE')
                     #time.sleep(0.5)
 
-                """
+                
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
-                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 300
-                    print('SCALE CHANGE')
-                    time.sleep(2)
+                    Min_1 = Min_1 - 50
 
                 if min(Sensor_2_Data[-RescaleRange:-1]) < 0.15:
-                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 300
-                    print('SCALE CHANGE')
-                    time.sleep(2)
+                    Min_2 = Min_2 - 50
 
                 if min(Sensor_3_Data[-RescaleRange:-1]) < 0.15:
-                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 300
-                    print('SCALE CHANGE')
-                    time.sleep(2)
+                    Min_3 = Min_3 - 50
 
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15:
-                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 300
-                    print('SCALE CHANGE')
-                    time.sleep(2)
-                """
-
-            
-
+                    Min_4 = Min_4 - 50
 
             # Gather values for displaying
             values[0] = Sensor_1
