@@ -256,26 +256,27 @@ for i in range(0, 5000):
             
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
-                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 300
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6:
+                    Max_1 = Max_1 - 75
                     print('SCALE CHANGE')
-                    time.sleep(2)
+                    time.sleep(0.5)
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.1:
-                    Max_2 = max(RawData_2[-RescaleRange:-1]) + 300
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6:
+                    Max_2 = Max_2 - 75
                     print('SCALE CHANGE')
-                    time.sleep(2)
+                    time.sleep(0.5)
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.1:
-                    Max_3 = max(RawData_3[-RescaleRange:-1]) + 300
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6:
+                    Max_3 = Max_3 - 75
                     print('SCALE CHANGE')
-                    time.sleep(2)
+                    time.sleep(0.5)
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.2 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
-                    Max_4 = max(RawData_4[-RescaleRange:-1]) + 300
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6:
+                    Max_4 = Max_4 - 75
                     print('SCALE CHANGE')
-                    time.sleep(2)
+                    time.sleep(0.5)
 
+                """
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
                     Min_1 = min(RawData_1[-RescaleRange:-1]) - 300
                     print('SCALE CHANGE')
@@ -295,6 +296,7 @@ for i in range(0, 5000):
                     Min_4 = min(RawData_4[-RescaleRange:-1]) - 300
                     print('SCALE CHANGE')
                     time.sleep(2)
+                """
 
             
 
