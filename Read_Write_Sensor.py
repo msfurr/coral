@@ -42,7 +42,7 @@ d_Sensor_2_Data = []
 d_Sensor_3_Data = []
 d_Sensor_4_Data = []
 
-RescaleRange = 250
+RescaleRange = 400
 RawData_1 = []
 RawData_2 = []
 RawData_3 = []
@@ -87,15 +87,15 @@ for i in range(0, 5000):
 
         # At the end of data gathering set the min and max of the range
         if i == 400:
-            Min_1 = min(Range_1) - 300
-            Min_2 = min(Range_2) - 300
-            Min_3 = min(Range_3) - 300
-            Min_4 = min(Range_4) - 300
+            Min_1 = min(Range_1) - 400
+            Min_2 = min(Range_2) - 400
+            Min_3 = min(Range_3) - 400
+            Min_4 = min(Range_4) - 400
 
-            Max_1 = max(Range_1) + 300
-            Max_2 = max(Range_2) + 300
-            Max_3 = max(Range_3) + 300
-            Max_4 = max(Range_4) + 300
+            Max_1 = max(Range_1) + 400
+            Max_2 = max(Range_2) + 400
+            Max_3 = max(Range_3) + 400
+            Max_4 = max(Range_4) + 400
 
     # Begin data collection with scaling
     else:
@@ -256,20 +256,20 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4 or 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.1:
-                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 200
-                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 200
+                    Max_1 = max(RawData_1[-RescaleRange:-1]) + 400
+                    Min_1 = min(RawData_1[-RescaleRange:-1]) - 400
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.1:
-                    Max_2 = max(RawData_2[-RescaleRange:-1]) + 200
-                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 200
+                    Max_2 = max(RawData_2[-RescaleRange:-1]) + 400
+                    Min_2 = min(RawData_2[-RescaleRange:-1]) - 400
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.1:
-                    Max_3 = max(RawData_3[-RescaleRange:-1]) + 200
-                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 200
+                    Max_3 = max(RawData_3[-RescaleRange:-1]) + 400
+                    Min_3 = min(RawData_3[-RescaleRange:-1]) - 400
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:]) > 0.4 or 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.1:
-                    Max_4 = max(RawData_4[-RescaleRange:-1]) + 200
-                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 200
+                    Max_4 = max(RawData_4[-RescaleRange:-1]) + 400
+                    Min_4 = min(RawData_4[-RescaleRange:-1]) - 400
                 
 
             # Gather values for displaying
