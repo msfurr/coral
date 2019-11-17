@@ -262,7 +262,7 @@ for i in range(0, 5000):
                     print('RESCALED')
                     print('  ')
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
                     Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
                     Min_2 - min(Sensor_2_Data[-RescaleRange:-1]) - 500
                     print('RESCALED')
