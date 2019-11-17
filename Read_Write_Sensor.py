@@ -252,8 +252,7 @@ for i in range(0, 5000):
             d_last_estimate_4 = d_current_estimate_4
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
-
-            
+            """
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
@@ -276,6 +275,7 @@ for i in range(0, 5000):
                     Max_4 = (sum(Sensor_4_Data) / len(Sensor_4_Data)) + 1000
                     print('RESCALED')
                     print('  ')
+            """
 
             # Gather values for displaying
             values[0] = Sensor_1
