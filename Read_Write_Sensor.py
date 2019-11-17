@@ -258,23 +258,23 @@ for i in range(0, 5000):
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6:
                     Max_1 = Max_1 - 75
-                    print('SCALE CHANGE')
-                    time.sleep(0.5)
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6:
                     Max_2 = Max_2 - 75
-                    print('SCALE CHANGE')
-                    time.sleep(0.5)
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6:
                     Max_3 = Max_3 - 75
-                    print('SCALE CHANGE')
-                    time.sleep(0.5)
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6:
                     Max_4 = Max_4 - 75
-                    print('SCALE CHANGE')
-                    time.sleep(0.5)
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
                 """
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
