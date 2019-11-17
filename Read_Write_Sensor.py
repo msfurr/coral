@@ -256,29 +256,29 @@ for i in range(0, 5000):
             
             if len(Sensor_1_Data) > RescaleRange:
 
-                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
-                    Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 400
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.6:
+                    Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
-                    Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 400
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.6:
+                    Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.4:
-                    Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 400
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.6:
+                    Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 500
 
-                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.4:
-                    Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 400
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.6:
+                    Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
-                    Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 400
+                    Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
 
                 if min(Sensor_2_Data[-RescaleRange:-1]) < 0.15:
-                    Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 400
+                    Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
 
                 if min(Sensor_3_Data[-RescaleRange:-1]) < 0.15:
-                    Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 400
+                    Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 500
 
                 if min(Sensor_4_Data[-RescaleRange:-1]) < 0.15:
-                    Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 400
+                    Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
 
             # Gather values for displaying
             values[0] = Sensor_1
