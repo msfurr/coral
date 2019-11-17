@@ -68,8 +68,6 @@ print('Reading Google Coral Data values, press Ctrl-C to quit...')
 print('|  1    |   2   |   3   |  4  |   Time   |   d_1   |   d_2   |   d_3   |   d_4   |    t   |'.format(*range(2)))
 print('-' * 60)
 
-count = 0
-
 for i in range(0, 5000):
     # Read all the ADC channel values in a list
     values = [0]*9
@@ -101,8 +99,6 @@ for i in range(0, 5000):
 
     # Begin data collection with scaling
     else:
-
-        count = count + 1
 
         # Store raw data first
         RawData_1.append(Sensor_1)
@@ -257,34 +253,29 @@ for i in range(0, 5000):
 
             # If the min / max of the last 20 data points is far away from the current min / max, rescale
 
-            print(count)
-            if count > RescaleRange:
+            
+            if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:-1]) > 0.4:
-                    Max_1 = max(Sensor_1_Data[-RescaleRange:-1]) + 500
+                    Max_1 = (sum(Sensor_1_Data) / len(Sensor_1_Data)) + 1000
                     Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
                     print('RESCALED')
                     print('  ')
 
                 if 1 - max(Sensor_2_Data[-RescaleRange:-1]) > 0.4:
-                    Max_2 = max(Sensor_2_Data[-RescaleRange:-1]) + 500
-                    Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
+                    Max_2 = (sum(Sensor_2_Data) / len(Sensor_2_Data)) + 1000
                     print('RESCALED')
                     print('  ')
 
                 if 1 - max(Sensor_3_Data[-RescaleRange:-1]) > 0.4:
-                    Max_3 = max(Sensor_3_Data[-RescaleRange:-1]) + 500
-                    Min_3 = min(Sensor_3_Data[-RescaleRange:-1]) - 500
+                    Max_3 = (sum(Sensor_3_Data) / len(Sensor_3_Data)) + 1000
                     print('RESCALED')
                     print('  ')
 
                 if 1 - max(Sensor_4_Data[-RescaleRange:-1]) > 0.4:
-                    Max_4 = max(Sensor_4_Data[-RescaleRange:-1]) + 500
-                    Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
+                    Max_4 = (sum(Sensor_4_Data) / len(Sensor_4_Data)) + 1000
                     print('RESCALED')
                     print('  ')
-
-                count = 0
 
             # Gather values for displaying
             values[0] = Sensor_1
