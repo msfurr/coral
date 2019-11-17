@@ -55,9 +55,9 @@ mea_e = 0.05
 est_e = 0.05
 q = 0.05
 
-d_mea_e = 0.07
-d_est_e = 0.07
-d_q = 0.08
+d_mea_e = 0.05
+d_est_e = 0.05
+d_q = 0.05
 
 # Initiatize timer
 startTime = time.time()
