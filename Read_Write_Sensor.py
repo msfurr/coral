@@ -51,8 +51,8 @@ RawData_4 = []
 timeTracker = []
 
 # Kalman Filter Parameters
-mea_e = 0.07
-est_e = 0.07
+mea_e = 0.05
+est_e = 0.05
 q = 0.05
 
 d_mea_e = 0.07
