@@ -276,17 +276,25 @@ for i in range(0, 5000):
                     #print('SCALE CHANGE')
                     #time.sleep(0.5)
 
-                if max(Sensor_1_Data[-RescaleRange:-1]) > 0.99:
+                if 1 - max(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
                     Max_1 = Max_1 + 50
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
-                if max(Sensor_2_Data[-RescaleRange:-1]) > 0.99:
+                if 1 - max(Sensor_2_Data[-RescaleRange:-1]) < 0.15:
                     Max_2 = Max_2 + 50
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
-                if max(Sensor_3_Data[-RescaleRange:-1]) > 0.99:
+                if 1 - max(Sensor_3_Data[-RescaleRange:-1]) < 0.15:
                     Max_3 = Max_3 + 50
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
-                if max(Sensor_4_Data[-RescaleRange:-1]) > 0.99:
+                if 1 - max(Sensor_4_Data[-RescaleRange:-1]) < 0.15:
                     Max_4 = Max_4 + 50
+                    #print('SCALE CHANGE')
+                    #time.sleep(0.5)
 
                 if min(Sensor_1_Data[-RescaleRange:-1]) < 0.15:
                     Min_1 = Min_1 - 50
