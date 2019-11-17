@@ -93,6 +93,7 @@ for i in range(0, 5000):
             Min_4 = min(Range_4) - 500
 
             Max_1 = max(Range_1) + 500
+            print(Max_1)
             Max_2 = max(Range_2) + 500
             Max_3 = max(Range_3) + 500
             Max_4 = max(Range_4) + 500
@@ -256,10 +257,10 @@ for i in range(0, 5000):
             if len(Sensor_1_Data) > RescaleRange:
 
                 if 1 - max(Sensor_1_Data[-RescaleRange:]) > 0.4:
-                    Max_1 = max(Sensor_1_Data[-RescaleRange:]) + 700
+                    print(max(Sensor_1_Data[-RescaleRange:]) + 500)
                     #Min_1 = min(Sensor_1_Data[-RescaleRange:-1]) - 500
 
-                if 1 - max(Sensor_2_Data[-RescaleRange:]) > 0.4:
+                """if 1 - max(Sensor_2_Data[-RescaleRange:]) > 0.4:
                     Max_2 = max(Sensor_2_Data[-RescaleRange:]) + 700
                     #Min_2 = min(Sensor_2_Data[-RescaleRange:-1]) - 500
 
@@ -270,6 +271,7 @@ for i in range(0, 5000):
                 if 1 - max(Sensor_4_Data[-RescaleRange:]) > 0.4:
                     Max_4 = max(Sensor_4_Data[-RescaleRange:]) + 700
                     #Min_4 = min(Sensor_4_Data[-RescaleRange:-1]) - 500
+                """
 
             # Gather values for displaying
             values[0] = Sensor_1
@@ -281,7 +283,7 @@ for i in range(0, 5000):
             values[6] = d_Sensor_3
             values[7] = d_Sensor_4
             values[8] = timeTracker[-1]
-            print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
+            #print('|', '%.4f'%values[0], ' |', '%.4f'%values[1], '|', '%.4f'%values[2], '|', '%.4f'%values[3], '|', '%.4f'%values[4], '|', '%.4f'%values[5], '|', '%.4f'%values[6], '|', '%.4f'%values[7], '|', '%.4f'%values[8], '|')
 
     # Pause for display
     time.sleep(0)
