@@ -390,7 +390,13 @@ for i in range(0, 10000):
 UnfilteredData = {'timeTracker': timeTracker, 'Sensor 1': PreFilter_1, 'Sensor 2': PreFilter_2, 'Sensor 3': PreFilter_3, 'Sensor 4': PreFilter_4}
 UnscaledData = {'timeTracker': timeTracker, 'Sensor 1': NoScale_1, 'Sensor 2': NoScale_2, 'Sensor 3': NoScale_3, 'Sensor 4': NoScale_4}
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
+
+Unfiltered = pd.DataFrame(data = UnfilteredData)
+Unscaled = pd.DataFrame(data = UnScaledData)
 Results = pd.DataFrame(data = SensorData)
+
+export_csv = Unfiltered.to_csv(r'/home/mendel/coral/Unfiltered.csv', header = True, index = None)
+export_csv = Unscaled.to_csv(r'/home/mendel/coral/Unscaled.csv', header = True, index = None)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
 
 # Pull command for file
