@@ -261,6 +261,12 @@ for i in range(0, 10000):
             Sensor_4_Data.append(current_estimate_4)
             last_estimate_4 = current_estimate_4
 
+            k_gain_1 = err_estimate_1 / (err_estimate_1 + err_measure_1)
+            current_estimate_1 = last_estimate_1 + kalman_gain_1 * (Sensor_1 - last_estimate_1)
+            err_estimate_1 =  (1.0 - kalman_gain_1) * err_estimate_1 + abs(last_estimate_1 - current_estimate_1) * q
+            Sensor_1_Data.append(current_estimate_1)
+            last_estimate_1 = current_estimate_1
+
             timeTracker.append(time.time())
 
             # Gather derivatives
