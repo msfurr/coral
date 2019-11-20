@@ -53,6 +53,11 @@ PreFilter_2 = []
 PreFilter_3 = []
 PreFilter_4 = []
 
+PreScale_1 = []
+PreScale_2 = []
+PreScale_3 = []
+PreScale_4 = []
+
 timeTracker = []
 
 # Kalman Filter Parameters
@@ -83,6 +88,11 @@ for i in range(0, 10000):
     Sensor_3 = adc.read_adc(2, gain = 4)
     Sensor_4 = adc.read_adc(3, gain = 4)
 
+    NoScale_1 = Sensor_1
+    NoScale_2 = Sensor_2
+    NoScale_3 = Sensor_3
+    NoScale_4 = Sensor_4
+
     # Create a range for scaling based on first 10 values
     if i < 401:
         Range_1.append(Sensor_1)
@@ -101,6 +111,16 @@ for i in range(0, 10000):
             Max_2 = max(Range_2) + 400
             Max_3 = max(Range_3) + 400
             Max_4 = max(Range_4) + 400
+
+            NoScale_Min_1 = Min_1
+            NoScale_Min_2 = Min_2
+            NoScale_Min_3 = Min_3
+            NoScale_Min_4 = Min_4
+
+            NoScale_Max_1 = Max_1
+            NoScale_Max_2 = Max_2
+            NoScale_Max_3 = Max_3
+            NoScale_Max_4 = Max_4
 
     # Begin data collection with scaling
     else:
@@ -137,6 +157,34 @@ for i in range(0, 10000):
             Sensor_4 = 0
         else:
             Sensor_4 = (Sensor_4 - Min_4) / (Max_4 - Min_4)
+
+        if NoScale_1 > NoScale_Max_1:
+            NoScale_1 = 1
+        elif NoScale_1 < NoScale_Min_1:
+            NoScale_1 = 0
+        else:
+            NoScale_1 = (NoScale_1 - NoScale_Min_1) / (NoScale_Max_1 - NoScale_Min_1)
+
+        if NoScale_2 > NoScale_Max_2:
+            NoScale_2 = 1
+        elif NoScale_2 < NoScale_Min_2:
+            NoScale_2 = 0
+        else:
+            NoScale_2 = (NoScale_2 - NoScale_Min_2) / (NoScale_Max_2 - NoScale_Min_2)
+
+        if NoScale_3 > NoScale_Max_3:
+            NoScale_3 = 1
+        elif NoScale_3 < NoScale_Min_3:
+            NoScale_3 = 0
+        else:
+            NoScale_3 = (NoScale_3 - NoScale_Min_3) / (NoScale_Max_3 - NoScale_Min_3)
+
+        if NoScale_4 > NoScale_Max_4:
+            NoScale_4 = 1
+        elif NoScale_4 < NoScale_Min_4:
+            NoScale_4 = 0
+        else:
+            NoScale_4 = (NoScale_4 - NoScale_Min_4) / (NoScale_Max_4 - NoScale_Min_4)
 
         PreFilter_1.append(Sensor_1)
         PreFilter_2.append(Sensor_2)
@@ -296,6 +344,8 @@ for i in range(0, 10000):
     # Pause for display
     time.sleep(0)
 
+UnfilteredData = {'timeTracker': timeTracker, 'Sensor 1': PreFilter_1, 'Sensor 2': PreFilter_2, 'Sensor 3': PreFilter_3, 'Sensor 4': PreFilter_4}
+UnscaledData = 
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
