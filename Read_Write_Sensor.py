@@ -283,8 +283,26 @@ for i in range(0, 10000):
             k_gain_1 = err_estimate_1_NoScale / (err_estimate_1_NoScale + err_measure_1_NoScale)
             current_estimate_1_NoScale = last_estimate_1_NoScale + k_gain_1 * (NoScale_1 - last_estimate_1_NoScale)
             err_estimate_1_NoScale =  (1.0 - k_gain_1) * err_estimate_1_NoScale + abs(last_estimate_1_NoScale - current_estimate_1_NoScale) * q
-            Sensor_1_Data.append(current_estimate_1_NoScale)
+            PreScale_1.append(current_estimate_1_NoScale)
             last_estimate_1_NoScale = current_estimate_1_NoScale
+
+            k_gain_2 = err_estimate_2_NoScale / (err_estimate_2_NoScale + err_measure_2_NoScale)
+            current_estimate_2_NoScale = last_estimate_2_NoScale + k_gain_2 * (NoScale_2 - last_estimate_2_NoScale)
+            err_estimate_2_NoScale =  (1.0 - k_gain_2) * err_estimate_2_NoScale + abs(last_estimate_2_NoScale - current_estimate_2_NoScale) * q
+            PreScale_2.append(current_estimate_2_NoScale)
+            last_estimate_2_NoScale = current_estimate_2_NoScale
+
+            k_gain_3 = err_estimate_3_NoScale / (err_estimate_3_NoScale + err_measure_3_NoScale)
+            current_estimate_3_NoScale = last_estimate_3_NoScale + k_gain_3 * (NoScale_3 - last_estimate_3_NoScale)
+            err_estimate_3_NoScale =  (1.0 - k_gain_3) * err_estimate_3_NoScale + abs(last_estimate_3_NoScale - current_estimate_3_NoScale) * q
+            PreScale_3.append(current_estimate_3_NoScale)
+            last_estimate_3_NoScale = current_estimate_3_NoScale
+
+            k_gain_4 = err_estimate_4_NoScale / (err_estimate_4_NoScale + err_measure_4_NoScale)
+            current_estimate_4_NoScale = last_estimate_4_NoScale + k_gain_4 * (NoScale_4 - last_estimate_4_NoScale)
+            err_estimate_4_NoScale =  (1.0 - k_gain_4) * err_estimate_4_NoScale + abs(last_estimate_4_NoScale - current_estimate_4_NoScale) * q
+            PreScale_4.append(current_estimate_4_NoScale)
+            last_estimate_4_NoScale = current_estimate_4_NoScale
 
             timeTracker.append(time.time())
 
@@ -370,7 +388,7 @@ for i in range(0, 10000):
     time.sleep(0)
 
 UnfilteredData = {'timeTracker': timeTracker, 'Sensor 1': PreFilter_1, 'Sensor 2': PreFilter_2, 'Sensor 3': PreFilter_3, 'Sensor 4': PreFilter_4}
-UnscaledData = 
+UnscaledData = {'timeTracker': timeTracker, 'Sensor 1': NoScale_1, 'Sensor 2': NoScale_2, 'Sensor 3': NoScale_3, 'Sensor 4': NoScale_4}
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 Results = pd.DataFrame(data = SensorData)
 export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, index = None)
