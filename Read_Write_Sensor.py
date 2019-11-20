@@ -186,10 +186,10 @@ for i in range(0, 10000):
         else:
             NoScale_4 = (NoScale_4 - NoScale_Min_4) / (NoScale_Max_4 - NoScale_Min_4)
 
-        PreFilter_1.append(Sensor_1)
-        PreFilter_2.append(Sensor_2)
-        PreFilter_3.append(Sensor_3)
-        PreFilter_4.append(Sensor_4)
+        PreFilter_1.append(NoScale_1)
+        PreFilter_2.append(NoScale_2)
+        PreFilter_3.append(NoScale_3)
+        PreFilter_4.append(NoScale_4)
 
         # Kalman Filtering
         # For the first iteration of real data collection,
@@ -403,6 +403,7 @@ export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, in
 # mdt pull /home/mendel/coral/Results.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
 # mdt pull /home/mendel/coral/Unfiltered.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
 # mdt pull /home/mendel/coral/Unscaled.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
+
 # mdt pull /home/mendel/coral/Results.csv C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
