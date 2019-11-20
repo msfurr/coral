@@ -392,7 +392,7 @@ UnscaledData = {'timeTracker': timeTracker, 'Sensor 1': NoScale_1, 'Sensor 2': N
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 
 Unfiltered = pd.DataFrame(data = UnfilteredData)
-Unscaled = pd.DataFrame(data = UnScaledData)
+Unscaled = pd.DataFrame(data = UnscaledData)
 Results = pd.DataFrame(data = SensorData)
 
 export_csv = Unfiltered.to_csv(r'/home/mendel/coral/Unfiltered.csv', header = True, index = None)
