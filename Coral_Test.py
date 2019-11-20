@@ -35,11 +35,14 @@ def main():
         input_data = data[0][[i]]
         print(input_data)
         interpreter.set_tensor(input_details[0]['index'], input_data)
+        classStart = time.time()
         interpreter.invoke()
         results.append(np.argmax(interpreter.get_tensor(output_details[0]['index'])))
+        classEnd = time.time()
     
     duration = time.time() - start
     print(duration / len(data[0]))
+    print(classEnd - classStart)
     return results
     
 results = main()
