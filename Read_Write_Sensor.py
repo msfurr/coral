@@ -200,6 +200,11 @@ for i in range(0, 10000):
             last_estimate_3 = Sensor_3
             last_estimate_4 = Sensor_4
 
+            last_est_1_noscale = NoScale_1
+            last_est_2_noscale = NoScale_2
+            last_est_3_noscale = NoScale_3
+            last_est_4_noscale = NoScale_4
+
             d_last_estimate_1 = 0
             d_last_estimate_2 = 0
             d_last_estimate_3 = 0
@@ -223,6 +228,15 @@ for i in range(0, 10000):
             d_err_measure_4 = d_mea_e
             d_err_estimate_4 = d_est_e
 
+            err_measure_1_NoScale = mea_e
+            err_estimate_1_NoScale = est_e
+            err_measure_2_NoScale = mea_e
+            err_estimate_2_NoScale = est_e
+            err_measure_3_NoScale = mea_e
+            err_estimate_3_NoScale = est_e
+            err_measure_4_NoScale = mea_e
+            err_estimate_4_NoScale = est_e
+
             Sensor_1_Data.append(Sensor_1)
             Sensor_2_Data.append(Sensor_2)
             Sensor_3_Data.append(Sensor_3)
@@ -232,6 +246,11 @@ for i in range(0, 10000):
             d_Sensor_2_Data.append(0)
             d_Sensor_3_Data.append(0)
             d_Sensor_4_Data.append(0)
+
+            PreScale_1.append(NoScale_1)
+            PreScale_2.append(NoScale_2)
+            PreScale_3.append(NoScale_3)
+            PreScale_4.append(NoScale_4)
 
             timeTracker.append(time.time())
 
@@ -261,11 +280,11 @@ for i in range(0, 10000):
             Sensor_4_Data.append(current_estimate_4)
             last_estimate_4 = current_estimate_4
 
-            k_gain_1 = err_estimate_1 / (err_estimate_1 + err_measure_1)
-            current_estimate_1 = last_estimate_1 + kalman_gain_1 * (Sensor_1 - last_estimate_1)
-            err_estimate_1 =  (1.0 - kalman_gain_1) * err_estimate_1 + abs(last_estimate_1 - current_estimate_1) * q
-            Sensor_1_Data.append(current_estimate_1)
-            last_estimate_1 = current_estimate_1
+            k_gain_1 = err_estimate_1_NoScale / (err_estimate_1_NoScale + err_measure_1_NoScale)
+            current_estimate_1_NoScale = last_estimate_1_NoScale + k_gain_1 * (NoScale_1 - last_estimate_1_NoScale)
+            err_estimate_1_NoScale =  (1.0 - k_gain_1) * err_estimate_1_NoScale + abs(last_estimate_1_NoScale - current_estimate_1_NoScale) * q
+            Sensor_1_Data.append(current_estimate_1_NoScale)
+            last_estimate_1_NoScale = current_estimate_1_NoScale
 
             timeTracker.append(time.time())
 
