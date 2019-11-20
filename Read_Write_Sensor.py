@@ -48,6 +48,11 @@ RawData_2 = []
 RawData_3 = []
 RawData_4 = []
 
+PreFilter_1 = []
+PreFilter_2 = []
+PreFilter_3 = []
+PreFilter_4 = []
+
 timeTracker = []
 
 # Kalman Filter Parameters
@@ -99,7 +104,6 @@ for i in range(0, 10000):
 
     # Begin data collection with scaling
     else:
-
         # Store raw data first
         RawData_1.append(Sensor_1)
         RawData_2.append(Sensor_2)
@@ -133,6 +137,11 @@ for i in range(0, 10000):
             Sensor_4 = 0
         else:
             Sensor_4 = (Sensor_4 - Min_4) / (Max_4 - Min_4)
+
+        PreFilter_1.append(Sensor_1)
+        PreFilter_2.append(Sensor_2)
+        PreFilter_3.append(Sensor_3)
+        PreFilter_4.append(Sensor_4)
 
         # Kalman Filtering
         # For the first iteration of real data collection,
