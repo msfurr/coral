@@ -388,7 +388,7 @@ for i in range(0, 10000):
     time.sleep(0)
 
 UnfilteredData = {'timeTracker': timeTracker, 'Sensor 1': PreFilter_1, 'Sensor 2': PreFilter_2, 'Sensor 3': PreFilter_3, 'Sensor 4': PreFilter_4}
-UnscaledData = {'timeTracker': timeTracker, 'Sensor 1': NoScale_1, 'Sensor 2': NoScale_2, 'Sensor 3': NoScale_3, 'Sensor 4': NoScale_4}
+UnscaledData = {'timeTracker': timeTracker, 'Sensor 1': PreScale_1, 'Sensor 2': PreScale_2, 'Sensor 3': PreScale_3, 'Sensor 4': PreScale_4}
 SensorData = {'timeTracker': timeTracker, 'Sensor 1': Sensor_1_Data, 'Sensor 2': Sensor_2_Data, 'Sensor 3': Sensor_3_Data, 'Sensor 4': Sensor_4_Data, 'd_Sensor 1': d_Sensor_1_Data, 'd_Sensor 2': d_Sensor_2_Data, 'd_Sensor 3': d_Sensor_3_Data, 'd_Sensor 4': d_Sensor_4_Data}
 
 Unfiltered = pd.DataFrame(data = UnfilteredData)
@@ -401,6 +401,8 @@ export_csv = Results.to_csv(r'/home/mendel/coral/Results.csv', header = True, in
 
 # Pull command for file
 # mdt pull /home/mendel/coral/Results.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
+# mdt pull /home/mendel/coral/Unfiltered.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
+# mdt pull /home/mendel/coral/Unscaled.csv /Users/mikefurr/Documents/GitHub/coral_host/Jupyter_Notebooks
 # mdt pull /home/mendel/coral/Results.csv C:\Users\msfur\Documents\Raw_Data
 # exec(open('Read_Write_Sensor.py').read())
 # END
