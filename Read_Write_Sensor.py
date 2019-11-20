@@ -200,15 +200,15 @@ for i in range(0, 10000):
             last_estimate_3 = Sensor_3
             last_estimate_4 = Sensor_4
 
-            last_est_1_NoScale = NoScale_1
-            last_est_2_NoScale = NoScale_2
-            last_est_3_NoScale = NoScale_3
-            last_est_4_NoScale = NoScale_4
-
             d_last_estimate_1 = 0
             d_last_estimate_2 = 0
             d_last_estimate_3 = 0
             d_last_estimate_4 = 0
+
+            last_estimate_1_NoScale = NoScale_1
+            last_estimate_2_NoScale = NoScale_2
+            last_estimate_3_NoScale = NoScale_3
+            last_estimate_4_NoScale = NoScale_4
 
             err_measure_1 = mea_e
             err_estimate_1 = est_e
